@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 p-4 border mt-5 rounded" ngForm #templateForm="ngForm">
+            <label class="mt-2">Name</label>
+            <input type="text" class="form-control mt-3" name="name" ngModel required #fname="ngModel">
+
+            <div class="input-box">
+                <small *ngIf="fname.invalid && fname.touched">Name is required </small>
+            </div>
+
+            <label class="mt-2">email</label>
+            <input type="text" class="form-control mt-3" name="email" ngModel required #email="ngModel">
+
+            <div class="input-box">
+                <small *ngIf="email.invalid && email.touched">Email is required </small>
+            </div>
+
+            <label class="mt-2">phone</label>
+            <input type="text" class="form-control mt-3" name="phone" ngModel required #phone="ngModel">
+
+            <div class="input-box">
+                <small *ngIf="phone.invalid && phone.touched">Phone is required </small>
+            </div>
+
+            <label class="mt-2">address</label>
+            <input type="text" class="form-control mt-3" name="address" ngModel required #address="ngModel">
+
+            <div class="input-box">
+                <small *ngIf="address.invalid && address.touched">Address is required </small>
+            </div>
+
+            <div class="form-check mt-3">
+                <h3>Gender</h3>
+                <div class="gender" *ngFor="let gen of genders">
+                    <input type="radio" [id]="gen.id" [value]="gen.value" name="gender" ngModel>
+                    <label for="check">{{gen.value}}</label>
+                </div>
+            </div>
+
+            <div ngModelGroup="password" #pass="ngModelGroup">
+                <label class="mt-2">password</label>
+                <input type="text" class="form-control mt-3" name="password" ngModel required #password="ngModel">
+
+                <label class="mt-2">Confirm password</label>
+                <input type="text" class="form-control mt-3" name="cpassword" ngModel required #cpassword="ngModel">
+            </div>
+            
+            <div class="input-box">
+                <small *ngIf="pass.invalid && pass.touched">some fields are required </small>
+            </div>
+
+            <input type="submit" class="form-control mt-5 btn btn-success" (click)="submit()">
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
