@@ -8,12 +8,17 @@ import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { TemplateDriveFormComponent } from './template-drive-form/template-drive-form.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { PercentagePipe } from 'src/pipes/percentage.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    TemplateDriveFormComponent
+    TemplateDriveFormComponent,
+    ReactiveFormComponent,
+    PercentagePipe,
+    
   ],
   imports: [
     BrowserModule,
