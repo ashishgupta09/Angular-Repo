@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { ToastrModule, provideToastr } from 'ngx-toastr';
+import { PercentagePipe } from 'src/pipes/percentage.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ToastrModule, provideToastr } from 'ngx-toastr';
-import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
-import { TemplateDriveFormComponent } from './template-drive-form/template-drive-form.component';
-import { FormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { PercentagePipe } from 'src/pipes/percentage.pipe';
+import { TemplateDriveFormComponent } from './template-drive-form/template-drive-form.component';
 
 @NgModule({
   declarations: [
@@ -17,15 +17,15 @@ import { PercentagePipe } from 'src/pipes/percentage.pipe';
     HomeComponent,
     TemplateDriveFormComponent,
     ReactiveFormComponent,
-    PercentagePipe,
-    
+    PercentagePipe,  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [provideAnimations(), 
   provideToastr()] ,
