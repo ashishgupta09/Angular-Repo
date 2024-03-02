@@ -32,6 +32,21 @@ export class ReactiveFormComponent implements OnInit {
       ])
 
     })
+
+    this.practiceForm.get("name")?.valueChanges.subscribe((res: any) => {
+      console.log(res);
+    })
+
+    // for all field
+    this.practiceForm.valueChanges.subscribe((res: any) => {
+      console.log(res);
+    })
+
+    // for all status field
+    this.practiceForm.statusChanges.subscribe((res: any) => {
+      console.log(res);
+    })
+
   }
 
   ngOnInit(): void { }
