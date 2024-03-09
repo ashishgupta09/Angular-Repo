@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDriveFormComponent } from './template-drive-form/template-drive-form.component';
+import { ObservableComponent } from './observable/observable.component';
+import { SubjectComponent } from './subject/subject.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { TemplateDriveFormComponent } from './template-drive-form/template-drive
     HomeComponent,
     TemplateDriveFormComponent,
     ReactiveFormComponent,
-    PercentagePipe,  
+    PercentagePipe,
+    ObservableComponent,
+    SubjectComponent,  
   ],
   imports: [
     BrowserModule,
