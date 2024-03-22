@@ -12,6 +12,9 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDriveFormComponent } from './template-drive-form/template-drive-form.component';
 import { ObservableComponent } from './observable/observable.component';
 import { SubjectComponent } from './subject/subject.component';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from 'src/services/interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -29,9 +32,12 @@ import { SubjectComponent } from './subject/subject.component';
     BrowserAnimationsModule,
     ToastrModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [provideAnimations(), 
+  providers: [
+  {provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true}, 
+  provideAnimations(), 
   provideToastr()] ,
   bootstrap: [AppComponent]
 })
